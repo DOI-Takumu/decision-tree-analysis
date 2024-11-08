@@ -33,4 +33,60 @@ st.markdown("""
 3. **分析の実行**:
    - CSVファイルをアップロードすると、自動的に目的変数と説明変数を分析します。
 
-この手順に従ってCSVファイ
+この手順に従ってCSVファイルを準備し、アプリを使用してください。
+""")
+
+# 参照情報
+st.markdown("""
+本アプリの利用に際しては、次のようにご記載いただけますと幸いです：
+
+DOI, Takumu (2024). *Decision Tree Analysis Application*. Accessed: YYYY/MM/DD.
+
+（上記の形式に従い、ご使用日を明記してください。）
+""")
+
+# CSVファイルのアップロード
+uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type="csv")
+
+if uploaded_file is not None:
+    # CSVファイルを読み込む
+    data = pd.read_csv(uploaded_file)
+
+    # 目的変数と説明変数に分ける
+    y = data.iloc[:, 0]  # 最左列を目的変数
+    X = data.iloc[:, 1:]  # 残りの列を説明変数
+
+    # 学習データとテストデータに分割
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+    # 決定木モデルの作成と学習
+    model = DecisionTreeClassifier(random_state=42)
+    model.fit(X_train, y_train)
+
+    # テストデータで予測し、精度を表示
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    st.write(f"モデルの精度: {accuracy:.2f}")
+
+    # 特徴量重要度の表示
+    st.write("特徴量の重要度:")
+    feature_importances = pd.DataFrame({
+        '特徴量': X.columns,
+        '重要度': model.feature_importances_
+    }).sort_values(by='重要度', ascending=False)
+    st.write(feature_importances)
+
+    # 樹形図のプロットサイズを動的に調整
+    st.write("決定木の樹形図:")
+    depth = model.get_depth()
+    num_nodes = model.tree_.node_count
+    fig_width = min(24, 10 + num_nodes // 8)
+    fig_height = min(18, 8 + num_nodes // 12)
+
+    fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+    plot_tree(model, feature_names=X.columns, filled=True, ax=ax, fontsize=10, proportion=False)
+    plt.subplots_adjust(left=0.2, right=0.8, top=0.9, bottom=0.1)
+    st.pyplot(fig)
+
+else:
+    st.write("CSVファイルをアップロードしてください。")
