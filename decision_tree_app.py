@@ -52,9 +52,7 @@ st.markdown("""
 st.markdown("""
 **本アプリの利用に際しては、次のようにご記載いただけますと幸いです：**
 
-**DOI, Takumu (2024). _Decision Tree Analysis Tool:Supporting Data Analysis and Decision-Making_. Accessed: YYYY/MM/DD.**
-
-（**上記の形式に従い、ご使用日を明記してください。**）
+**DOI, Takumu (2024). _Decision Tree Analysis Tool:Supporting Data Analysis and Decision-Making_. **
 """)
 
 # CSVファイルのアップロード
