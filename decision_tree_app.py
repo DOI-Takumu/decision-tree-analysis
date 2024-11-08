@@ -52,8 +52,11 @@ st.markdown("""
 st.markdown("""
 **本アプリの利用に際しては、次のようにご記載いただけますと幸いです：**
 
-**DOI, Takumu (2024). _Decision Tree Analysis Tool:Supporting Data Analysis and Decision-Making_. **
-""")
+st.markdown("""
+<p style="text-align: right;">
+DOI, Takumu (2024). *Decision Tree Analysis Tool*: Supporting Data Analysis and Decision-Making.
+</p>
+""", unsafe_allow_html=True)
 
 # CSVファイルのアップロード
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type="csv")
