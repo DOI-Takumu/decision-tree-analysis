@@ -5,8 +5,17 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 import matplotlib.pyplot as plt
 
-st.title("決定木アプリ（Decision Tree Application）")
-st.markdown("### 作成者: 土居拓務（DOI, Takumu）")
+# タイトルとサブタイトルの表示
+st.title("インタラクティブ決定木分析アプリ")
+st.markdown("### データ分析と意思決定を支援")
+# 英語タイトルとサブタイトルの追加
+st.markdown("""
+**Interactive Decision Tree Analysis Application**  
+*Supporting Data Analysis and Decision-Making*
+""")
+
+# 製作者の名前を少し小さく表示
+st.markdown("#### 作成者: 土居拓務（DOI, Takumu）", unsafe_allow_html=True)
 
 # 利用上の注意や目的を表示
 st.markdown("""
@@ -36,13 +45,13 @@ st.markdown("""
 この手順に従ってCSVファイルを準備し、アプリを使用してください。
 """)
 
-# 参照情報
+# 引用形式を強調して表示
 st.markdown("""
-本アプリの利用に際しては、次のようにご記載いただけますと幸いです：
+**本アプリの利用に際しては、次のようにご記載いただけますと幸いです：**
 
-DOI, Takumu (2024). *Decision Tree Analysis Application*. Accessed: YYYY/MM/DD.
+**DOI, Takumu (2024). _Interactive Decision Tree Analysis Application:Supporting Data Analysis and Decision-Making_. Accessed: YYYY/MM/DD.**
 
-（上記の形式に従い、ご使用日を明記してください。）
+（**上記の形式に従い、ご使用日を明記してください。**）
 """)
 
 # CSVファイルのアップロード
