@@ -109,10 +109,8 @@ Original file is located at
 
 
 from pyngrok import ngrok
-!ngrok authtoken 2oYvW4E2FaACIYzAYDcIDPSwJMb_kEnqtV7ox4Rh9udEad5t
 
 !pip install streamlit pyngrok
-!ngrok authtoken 2oYvW4E2FaACIYzAYDcIDPSwJMb_kEnqtV7ox4Rh9udEad5t
 
 !nohup streamlit run decision_tree_app.py --server.port 8501 > /dev/null 2>&1 &
 
