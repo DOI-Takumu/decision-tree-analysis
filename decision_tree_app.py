@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1JVClBk8USc94192GxiZrbyqP7GVg5AJI
 """
 
-!pip install streamlit pyngrok
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile decision_tree_app.py
@@ -109,8 +108,6 @@ Original file is located at
 
 
 from pyngrok import ngrok
-
-!pip install streamlit pyngrok
 
 !nohup streamlit run decision_tree_app.py --server.port 8501 > /dev/null 2>&1 &
 
