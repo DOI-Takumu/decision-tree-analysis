@@ -73,14 +73,14 @@ if uploaded_file is not None:
     st.pyplot(fig)
 
 else:
-    st.write("CSVファイルをアップロードしてください。")
+    st.write("CSVファイルを↑に持ってくれば分析が始まります。")
 
 
 
 # 使用法の説明を枠で囲む
 st.markdown("""
 <div style="border: 2px solid black; padding: 10px; border-radius: 5px;">
-### アプリの使用法
+### アプリの使用法  
 このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。
 
 1. **CSVファイルの準備**:
