@@ -31,9 +31,8 @@ st.markdown("")  # 空の行を追加
 
 # 使用法の説明を枠で囲む
 st.markdown("""
-<div style="background-color: #e0f7fa; padding: 10px; border: 2px solid #b2ebf2; border-radius: 5px;">
+<div style="border: 2px solid black; padding: 10px; border-radius: 5px;">
 ### アプリの使用法
-
 このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。
 
 1. **CSVファイルの準備**:
