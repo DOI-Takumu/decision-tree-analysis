@@ -53,7 +53,7 @@ st.markdown("""
 **本アプリの利用に際しては、次のようにご記載いただけますと幸いです：**
 
 <p style="text-align: right;">
-DOI, Takumu (2024). *Decision Tree Analysis Tool*: Supporting Data Analysis and Decision-Making.
+DOI, Takumu (2024). Decision Tree Analysis Tool: Supporting Data Analysis and Decision-Making.
 </p>
 """, unsafe_allow_html=True)
 
