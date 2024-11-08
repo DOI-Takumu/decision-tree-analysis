@@ -12,7 +12,7 @@ st.markdown("**Decision Tree Analysis Tool** *| Supporting Data Analysis and Dec
 
 # 製作者の名前を右寄せで少し小さく表示
 st.markdown("""
-<div style="text-align: right; font-size: 14px;">
+<div style="text-align: right;">
 #### 作成者: 土居拓務（DOI, Takumu）
 </div>
 """, unsafe_allow_html=True)
