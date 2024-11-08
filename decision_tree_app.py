@@ -29,8 +29,9 @@ st.markdown("""
 
 st.markdown("")  # 空の行を追加
 
-# 使用法の説明を追加
+# 使用法の説明を枠で囲む
 st.markdown("""
+<div style="background-color: #e0f7fa; padding: 10px; border: 2px solid #b2ebf2; border-radius: 5px;">
 ### アプリの使用法
 
 このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。
@@ -46,7 +47,8 @@ st.markdown("""
    - CSVファイルをアップロードすると、自動的に目的変数と説明変数を分析します。
 
 この手順に従ってCSVファイルを準備し、アプリを使用してください。
-""")
+</div>
+""", unsafe_allow_html=True)
 
 # 引用形式を強調して表示
 st.markdown("""
