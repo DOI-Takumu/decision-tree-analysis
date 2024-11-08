@@ -73,7 +73,7 @@ if uploaded_file is not None:
     st.pyplot(fig)
 
 else:
-    st.write("CSVファイルを↑に持ってくれば分析が始まります。")
+    st.write("CSVファイルを上の枠内にドラッグ＆ドロップすれば分析が始まります。")
 
 
 
