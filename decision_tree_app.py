@@ -6,13 +6,9 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # タイトルとサブタイトルの表示
-st.title("# インタラクティブ決定木分析アプリ")
+st.title("決定木分析ツール")
 st.markdown("### データ分析と意思決定を支援")
-# 英語タイトルとサブタイトルの追加
-st.markdown("""
-**Interactive Decision Tree Analysis Application**  
-*Supporting Data Analysis and Decision-Making*
-""")
+st.markdown("**Decision Tree Analysis Tool** *| Supporting Data Analysis and Decision-Making*")
 
 # 製作者の名前を少し小さく表示
 st.markdown("#### 作成者: 土居拓務（DOI, Takumu）", unsafe_allow_html=True)
@@ -49,7 +45,7 @@ st.markdown("""
 st.markdown("""
 **本アプリの利用に際しては、次のようにご記載いただけますと幸いです：**
 
-**DOI, Takumu (2024). _Interactive Decision Tree Analysis Application:Supporting Data Analysis and Decision-Making_. Accessed: YYYY/MM/DD.**
+**DOI, Takumu (2024). _Decision Tree Analysis Tool:Supporting Data Analysis and Decision-Making_. Accessed: YYYY/MM/DD.**
 
 （**上記の形式に従い、ご使用日を明記してください。**）
 """)
