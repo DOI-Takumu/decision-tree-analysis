@@ -80,7 +80,7 @@ else:
 # 使用法の説明を枠で囲む
 st.markdown("""
 <div style="border: 2px solid black; padding: 10px; border-radius: 5px;">
-### アプリの使用法  
+アプリの使用法<br>   
 このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。
 
 1. **CSVファイルの準備**:
@@ -96,6 +96,8 @@ st.markdown("""
 この手順に従ってCSVファイルを準備し、アプリを使用してください。
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("")  # 空の行を追加
 
 # 引用形式を強調して表示
 st.markdown("""
