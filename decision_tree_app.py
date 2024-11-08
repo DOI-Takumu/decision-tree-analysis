@@ -6,7 +6,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # タイトルとサブタイトルの表示
-st.title("インタラクティブ決定木分析アプリ")
+st.title("# インタラクティブ決定木分析アプリ")
 st.markdown("### データ分析と意思決定を支援")
 # 英語タイトルとサブタイトルの追加
 st.markdown("""
