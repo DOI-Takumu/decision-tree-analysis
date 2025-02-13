@@ -34,7 +34,7 @@ st.markdown("")  # 空の行を追加
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type="csv")
 
 # --- 決定木の最大深さを選択するUIを用意 ---
-max_depth = st.slider("決定木の最大深さ (max_depth)", min_value=1, max_value=20, value=5, step=1)
+max_depth = st.slider("決定木の最大深さ", min_value=1, max_value=200, value=5, step=1)
 
 if uploaded_file is not None:
     # CSVファイルを読み込む
