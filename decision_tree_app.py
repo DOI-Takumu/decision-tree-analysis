@@ -22,15 +22,19 @@ st.markdown("""
 <div style="background-color: #e0f7fa; padding: 10px; border-radius: 5px;">
 本アプリを使用して分析する際は、以下の点にご留意ください。
 
-1. **分析の目的**：本アプリは教育や研究用途での利用を目的としています。
-2. **データの適切な前処理**：精度向上のため、欠損値や異常値を含むデータは適切に処理してください。
-3. **結果の解釈**：本アプリの結果はデータに基づくものであり、必ずしも全てのケースにおいて最適な判断が得られるわけではありません。
+1. **分析の目的**：本アプリは教育や研究用途での利用を目的としています。  
+2. **データの適切な前処理**：精度向上のため、欠損値や異常値を含むデータは適切に処理してください。  
+3. **結果の解釈**：本アプリの結果はデータに基づくものであり、必ずしも全てのケースにおいて最適な判断が得られるわけではありません。  
+</div>
 """, unsafe_allow_html=True)
 
 st.markdown("")  # 空の行を追加
 
 # CSVファイルのアップロード
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type="csv")
+
+# --- 決定木の最大深さを選択するUIを用意 ---
+max_depth = st.slider("決定木の最大深さ (max_depth)", min_value=1, max_value=20, value=5, step=1)
 
 if uploaded_file is not None:
     # CSVファイルを読み込む
@@ -43,8 +47,8 @@ if uploaded_file is not None:
     # 学習データとテストデータに分割
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-    # 決定木モデルの作成と学習
-    model = DecisionTreeClassifier(random_state=42)
+    # 決定木モデルの作成と学習（選択したmax_depthを反映）
+    model = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
     model.fit(X_train, y_train)
 
     # テストデータで予測し、精度を表示
@@ -75,27 +79,21 @@ if uploaded_file is not None:
 else:
     st.write("CSVファイルを上の枠内にドラッグ＆ドロップすれば分析が始まります。")
 
-
-
 # 使用法の説明を枠で囲む
 st.markdown("""
 <div style="border: 2px solid black; padding: 10px; border-radius: 5px;">
 <h3 style="font-weight: bold;">アプリの使用法</h3><br>  
-このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。
-<br>
+このアプリは、CSVファイルを分析するためのツールです。使用方法は以下の通りです。<br><br>
 
-1. **CSVファイルの準備**:
-   - 最左列には目的変数を記載してください。
-   - 残りの列は説明変数として扱われます。
-<br>
+1. **CSVファイルの準備**:<br>
+   - 最左列には目的変数を記載してください。<br>
+   - 残りの列は説明変数として扱われます。<br><br>
 
-2. **列名の設定**:
-   - 各変数の名称は最上列に記載されます。この列には、変数名を短めの半角英数字で記入することをお勧めします。
-<br>
+2. **列名の設定**:<br>
+   - 各変数の名称は最上列に記載されます。この列には、変数名を短めの半角英数字で記入することをお勧めします。<br><br>
 
-3. **分析の実行**:
-   - CSVファイルをアップロードすると、自動的に目的変数と説明変数を分析します。
-<br>
+3. **分析の実行**:<br>
+   - CSVファイルをアップロードすると、自動的に目的変数と説明変数を分析します。<br><br>
 
 この手順に従ってCSVファイルを準備し、アプリを使用してください。
 </div>
